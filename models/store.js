@@ -6,4 +6,11 @@ const storeSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  prices: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Pricing',
+    required: true
+  }
 })
+
+module.exports = mongoose.model('Store', storeSchema);
