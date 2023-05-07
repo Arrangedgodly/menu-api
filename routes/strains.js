@@ -18,7 +18,6 @@ router.post(
       name: Joi.string().required(),
       tier: Joi.string().required(),
       type: Joi.string().required(),
-      quantity: Joi.string().required(),
     }),
   }),
   auth,
@@ -29,12 +28,13 @@ router.patch(
   "/:strainId",
   celebrate({
     [Segments.BODY]: Joi.object().keys({
-      name: Joi.string().required(),
-      tier: Joi.string().required(),
-      type: Joi.string().required(),
-      quantity: Joi.string().required(),
+      name: Joi.string(),
+      tier: Joi.string(),
+      type: Joi.string(),
     }),
   }),
   auth,
   updateStrain
 );
+
+module.exports = router;

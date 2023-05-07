@@ -9,17 +9,12 @@ const strainSchema = new mongoose.Schema({
   tier: {
     type: String,
     required: true,
-    enum: ['fine', 'finest', 'special', 'budget', 'popcorn', 'grinds', 'promo']
+    enum: ['fine', 'finest']
   },
   type: {
     type: String,
     required: true,
     enum: ['sativa', 'indica', 'hybrid']
-  },
-  quantity: {
-    type: String,
-    required: true,
-    enum: ['gram', 'eighth', 'quarter', 'half', 'ounce', 'preroll', 'pack']
   },
 })
 
